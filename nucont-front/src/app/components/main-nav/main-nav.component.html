@@ -1,0 +1,64 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+      </button>
+      <h1>{{ 'APP_TOOLBAR_TITLE' | translate }}</h1>
+      <span class="menu-spacer"></span>
+    </mat-toolbar-row>
+    
+  </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #drawer>
+    <mat-nav-list>
+      <mat-toolbar><a [routerLink]="['']" class="menu-level" (click)="drawer.toggle()">{{ 'MENU' | translate }}</a></mat-toolbar>
+      <mat-divider></mat-divider>
+      <a *ngFor="let item of myLevelRoutes" 
+        mat-list-item 
+        [routerLink]="[item.route]" 
+        (click)="drawer.toggle()"
+      >
+        <fa-icon [icon]="[item.set, item.icon]" class="icon-menu"></fa-icon>
+        {{item.name}}
+        <mat-divider></mat-divider>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <h2>{{ 'APP_TOOLBAR_TITLE' | translate }}</h2>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav #drawer>
+      <mat-nav-list>
+        <mat-toolbar><a [routerLink]="['']" class="menu-level" (click)="drawer.toggle()">{{ 'MENU' | translate }}</a></mat-toolbar>
+        <mat-divider></mat-divider>
+        <a *ngFor="let item of myLevelRoutes" 
+          mat-list-item 
+          [routerLink]="[item.route]" 
+          (click)="drawer.toggle()"
+        >
+          <fa-icon [icon]="[item.set, item.icon]" class="icon-menu"></fa-icon>
+          {{item.name}}
+          <mat-divider></mat-divider>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->

@@ -1,0 +1,30 @@
+<section class="mat-typography">
+  <mat-grid-list cols="3" rowHeight="100px">
+      <mat-grid-tile
+        [colspam]="3"
+        [rowspam]="2">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <h1>{{ 'LEVEL_1' | translate }}</h1>
+          <h3>{{ 'RESUME_1' | translate }}</h3>
+        </div>
+      </mat-grid-tile>
+  </mat-grid-list>
+  <div class="container">
+    
+    <div #stageOne fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutAlign="center center">
+      <pre class="row">
+        100000  ATIVO             1000  300   500   1200
+        110000  ATIVO CIRCULANTE  500   100   200   600
+        111000  DISPONIVEL        200   100   50    150
+        200000  PASSIVO           800   250   450   1000
+      </pre>
+      
+      <button mat-flat-button color="primary" (click)="genarateJson()" class="row">{{ 'SUBMIT' | translate }}</button>
+    </div>
+    <div *ngIf="result" fxLayoutAlign="center center">
+      <pre>
+        {{result}}                    
+      </pre>
+    </div>
+  </div>
+</section>

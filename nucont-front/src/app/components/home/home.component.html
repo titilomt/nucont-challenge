@@ -1,0 +1,34 @@
+<section class="mat-typography">
+  <div class="container">
+    <div class="about-section about-heading" fxLayout="column" fxLayoutAlign="center center">
+      <div>
+        <h2 [ngStyle.lt-md]="{'margin-bottom': '15px'}">{{ 'HELLO' | translate }}</h2>
+      </div>
+      <div>
+        <h3 [ngStyle.xs]="{'font-size': '18px'}" [ngStyle.sm]="{'font-size': '22px'}">{{ 'ABOUT' | translate }}</h3>
+      </div>
+      <div>
+        <p style="text-align: justify;">{{ 'ABOUT_DESC' | translate }}</p>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutWrap="nowrap" fxLayoutGap="30px">
+        <div *ngFor="let level of myLevelRoutes" fxFlex="25">
+          <div fxLayout="column" fxLayoutAlign="center center" [ngStyle.xs]="{'padding': '0 60px'}">
+            <div>
+              <fa-icon [icon]="[level.set, level.icon]" [classes]="['fa-3x', 'icon-class']"></fa-icon>
+            </div>
+            <span fxFlex="30px"></span>
+            <h2 class="about-text">{{ level.title | translate }}</h2>
+            <span fxFlex="10px"></span>
+            <div class="about-text-container">
+              <p class="about-text">{{ level.desc | translate }}</p>
+            </div>
+            <span fxFlex="10px"></span>
+            <a mat-fab color="primary" [routerLink]="[level.route]">{{ level.title | translate }}</a>
+            <span fxFlex="10px"></span>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.icon-class {
+  color: #00d2d9;
+}
+
+app-stage-one.ng-star-inserted {
+  width: 100%;
+}

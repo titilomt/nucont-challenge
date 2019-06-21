@@ -1,0 +1,19 @@
+{
+  "APP_TOOLBAR_TITLE": "Wellcome to Nucont Challenge",
+  "TITLE": "nucont-front",
+  "LEVEL": "Level",
+  "MENU": "Choose your Level",
+  "HELLO": "Wellcome to Nucont Test!",
+  "ABOUT": "Overview",
+  "ABOUT_DESC": "Your team is assigned to build an ETL (Extract, Transform and Load) that will be used for Big Data analysis.\nYou'll be responsible to build the Transform part of the ETL. You have 4 samples of data to be transformed. Each of samples some new elements that made harder to transform than the previous.\nYour goal is to evolve your code, starting at the first sample until the last one, or until you are capable of doing. Even you evolving the same code, remember to save separately",
+  "LEVEL_1": "Level 1",
+  "LEVEL_1_DESC": "Easy difficulty level, there supose to be no challenge at all!!!",
+  "LEVEL_2": "Level 2",
+  "LEVEL_2_DESC": "Easy-Moderate difficulty level, there supose to be a little challenge !!",
+  "LEVEL_3": "Level 3",
+  "LEVEL_3_DESC": "Moderate level, now we cook it!!!",
+  "LEVEL_4": "Level 4",
+  "LEVEL_4_DESC": "Insane level of challendish, Aka: Darksouls level!",
+  "RESUME_1": "The template is bellow, press button convert to genarate JSON model.",
+  "SUBMIT": "JSON Stringfy"
+}

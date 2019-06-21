@@ -1,0 +1,14 @@
+<mat-nav-list class="nav-list">
+  <mat-toolbar><a [routerLink]="['']" class="menu-level" (click)="drawer.toggle()">{{ 'MENU' | translate }}</a></mat-toolbar>
+  <mat-divider></mat-divider>
+  <a *ngFor="let item of myLevelRoutes" 
+    mat-list-item 
+    [routerLink]="[item.route]" 
+    (click)="drawer.toggle()"
+    class="nav-caption"
+  >
+    <fa-icon [icon]="[item.set, item.icon]" class="icon-menu"></fa-icon>
+    {{item.name}}
+    <mat-divider></mat-divider>
+  </a>
+</mat-nav-list>

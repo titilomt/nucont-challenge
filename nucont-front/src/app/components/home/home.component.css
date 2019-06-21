@@ -1,0 +1,27 @@
+section{
+  padding: 20px;
+}
+
+.about-section{
+  text-align: center;
+}
+
+.about-heading{
+  padding-bottom: 30px;
+}
+
+.about-heading h2{
+  font-size: 32px;
+}
+
+.about-heading h3{
+  font-size: 22px;
+}
+
+.about-text-container{
+  height: 50px;
+}
+
+.about-text{
+  text-align: center;
+}
