@@ -9,7 +9,7 @@
   <li>Angular Material</li>
   <li>Bootstrap 4.4</li>
   <li>FontAwasome</li>
-  <li><a href="">README.md frontend</a></li>
+  <li><a href="https://github.com/titilomt/nucont-challenge/blob/master/nucont-front/README.md">README.md frontend</a></li>
 </ul>
 <h4>Runnig</h4>
 <p>For runnig the project just go to frontend folder and type <code>npm i</code> and then <code>ng serve --open</code> this should open your main browser in 4200 port with the application.</p>
@@ -25,7 +25,7 @@
   <li>mongoose - ^5.6.0</li>
   <li>cors</li>
   <li>body-parser</li>
-  <li><a href="">README.md backend</a></li>
+  <li><a href="https://github.com/titilomt/nucont-challenge/blob/master/nucont-back/README.md">README.md backend</a></li>
 </ul>
 <h4>Runnig</h4>
 <p>Before running be sure that port 3003 are available and of course create a mongo connection in port 27017 aka localhost, if you got your own connection just change it inside the config folder config.json file(Remember that in this mongobd should exists a connection called <strong>nucont</strong>)</p>
