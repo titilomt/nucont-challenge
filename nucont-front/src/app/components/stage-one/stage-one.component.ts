@@ -14,11 +14,10 @@ export class StageOneComponent implements AfterViewInit  {
 
   ngAfterViewInit(): void {
     // outputs `I am span`
-    let x = this.nucontService.showTodayDate();
   }
 
   genarateJson() {
-    this.nucontService.postStage(this.stageOne.nativeElement.textContent).subscribe(res => {
+    this.nucontService.postStageOne(this.stageOne.nativeElement.textContent).subscribe(res => {
       this.result = JSON.stringify(res.data, undefined, 2);
       console.log(this.result);
     });

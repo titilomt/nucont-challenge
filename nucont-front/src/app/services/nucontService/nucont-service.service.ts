@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, tap  } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -8,13 +8,33 @@ import { Observable, of } from 'rxjs';
 })
 export class NucontService {
   nucont:any = [];
-  private _url: string = "http://localhost:3003/doIt";
+  private _url: string = "http://localhost:3003/doIt/";
 
   constructor(private http: HttpClient) { }
 
-  postStage(data:any): Observable<any> {
+  postStageOne(data:any): Observable<any> {
     return this.http.post<any>(
-      this._url, 
+      `${this._url}one`, 
+      {data}
+    ).pipe(map((res: Response) => {
+      return res;
+    }, catchError(this.handleError)));
+  }
+
+  postStageTwo(data:any): Observable<any> {
+    let url = `${this._url}two`;
+    return this.http.post<any>(
+      url,
+      {data}
+    ).pipe(map((res: Response) => {
+      return res;
+    }, catchError(this.handleError)));
+  }
+
+  postStageThree(data:any): Observable<any> {
+    let url = `${this._url}three`;
+    return this.http.post<any>(
+      url,
       {data}
     ).pipe(map((res: Response) => {
       return res;

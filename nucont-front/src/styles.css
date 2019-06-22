@@ -5,6 +5,28 @@
   color: #00d2d9;
 }
 
-app-stage-one.ng-star-inserted {
+app-stage-one, app-stage-two, app-stage-three {
   width: 100%;
+}
+
+.result-format {
+  overflow: auto;
+  margin-left: auto;
+  width: 500px;
+  margin-right: auto;
+  height: 100%;
+  border: 1px solid #0000001f;
+  border-radius: 5px;
+  padding: 40px;
+  background-color: #77777761;
+}
+
+.button-submit {
+  width: 100%; 
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
+.mat-divider{
+  margin: 10px;
 }

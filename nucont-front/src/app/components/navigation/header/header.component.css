@@ -16,6 +16,7 @@ a:hover, a:active{
 mat-toolbar{
   position: fixed;
   top: 0;
+  z-index: 1;
   border-radius: 0;
   left: 0;
 }

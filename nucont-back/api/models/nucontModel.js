@@ -9,7 +9,7 @@ const NucontSchema = new Schema ({
   debit: Number,
   credit: Number,
   finalBalance: Number,
-  parent: String | null
+  parent: String
 });
 
 module.exports = mongoose.model('NucontModel', NucontSchema);

@@ -20,10 +20,12 @@ import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './components/home/home.component';
-import { MaterialModule } from './components/material/material';
+import { MaterialModule } from './material/material';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { StageOneComponent } from './components/stage-one/stage-one.component';
+import { StageTwoComponent } from './components/stage-two/stage-two.component';
+import { StageThreeComponent } from './components/stage-three/stage-three.component';
 
 export function setupTranslateFactory(
   service: TranslateService): Function {
@@ -37,10 +39,12 @@ export function setupTranslateFactory(
     PlaceholderComponent,
     MainNavComponent,
     HomeComponent,
+    StageTwoComponent,
     LayoutComponent,
     HeaderComponent,
     SidenavListComponent,
-    StageOneComponent
+    StageOneComponent,
+    StageThreeComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaceholderComponent } from '../components/placeholder/placeholder.component';
 import { StageOneComponent } from '../components/stage-one/stage-one.component';
+import { StageTwoComponent } from '../components/stage-two/stage-two.component';
 import { HomeComponent } from '../components/home/home.component';
+import { StageThreeComponent } from '../components/stage-three/stage-three.component';
 
 const routes: Routes = [
   {
@@ -15,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'level/two',
-    component: PlaceholderComponent
+    component: StageTwoComponent
   },
   {
     path: 'level/three',
-    component: PlaceholderComponent
+    component: StageThreeComponent
   },
   {
     path: 'level/four',
