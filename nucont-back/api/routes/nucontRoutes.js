@@ -13,4 +13,8 @@ router.post('/doIt/two', nucontController.levelTwo);
 
 router.post('/doIt/three', nucontController.levelThree);
 
+router.post('/doIt/four', nucontController.levelFour);
+
+router.post('/doIt/save', nucontController.saveBalance);
+
 module.exports = router;

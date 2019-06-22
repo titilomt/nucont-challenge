@@ -116,7 +116,7 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile 
-          *ngIf="result"
+          *ngIf="result.length > 0"
           [colspan]="3"
           [rowspan]="5"
         >
@@ -125,6 +125,15 @@
               {{result}}                    
             </pre>
           </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        *ngIf="balances.length > 0"
+        [colspan]="3"
+        [rowspan]="1"
+      >
+        <div fxLayoutAlign="center center" class="button-submit">
+          <button mat-flat-button color="primary" (click)="save()" >{{ 'SAVE' | translate }}</button>
+        </div>
       </mat-grid-tile>
   </mat-grid-list>
 </section>

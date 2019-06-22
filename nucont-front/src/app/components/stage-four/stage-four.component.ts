@@ -1,19 +1,20 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NucontService } from 'src/app/services/nucontService/nucont-service.service';
-import { Balance } from './../../models/balance.nucont';
-import { AlertService } from './../../services/alert/alert.service';
+import { Balance } from 'src/app/models/balance.nucont';
+import { AlertService } from 'src/app/services/alert/alert.service';
+
 
 @Component({
-  selector: 'app-stage-two',
-  templateUrl: './stage-two.component.html',
-  styleUrls: ['./stage-two.component.css']
+  selector: 'app-stage-four',
+  templateUrl: './stage-four.component.html',
+  styleUrls: ['./stage-four.component.css']
 })
-export class StageTwoComponent implements AfterViewInit {
-  @ViewChild('stageTwo', {static: false}) stageTwo: ElementRef;
+export class StageFourComponent implements AfterViewInit {
+  @ViewChild('stageFour', {static: false}) stageFour: ElementRef;
   result:any = [];
-
-  balances: Array<Balance> = [];
   
+  balances: Array<Balance> = [];
+
   constructor(private nucontService: NucontService, private alertService: AlertService) { }
 
   ngAfterViewInit() {
@@ -22,23 +23,26 @@ export class StageTwoComponent implements AfterViewInit {
   }
 
   genarateJson(){
-    this.nucontService.postStageTwo(this.stageTwo.nativeElement.textContent).subscribe(res => {
+    console.log(this.stageFour.nativeElement.textContent);
+    this.nucontService.postStageFour(this.stageFour.nativeElement.textContent).subscribe(res => {
       this.result = JSON.stringify(res.data, undefined, 2);
-      res.data.forEach((el: { _id: any; description: String; classifier: String; openingBalance: Number; debit: Number; credit: Number; finalBalance: Number; parent: any; }) => {
-        let balance = new Balance(el._id, el.description, el.classifier, el.openingBalance, el.debit, el.credit, el.finalBalance, el.parent);
-        this.balances.push(balance);
+      res.data.forEach((el: Array<Balance>) => {
+        el.forEach((bal:Balance) => {
+          let b = new Balance(bal._id, bal.description, bal.classifier, bal.openingBalance, bal.debit, bal.credit, bal.finalBalance, bal.parent);
+          console.log(b);
+          this.balances.push(b);
+        });        
       });
     });
   }
 
   save() {
+    
     this.nucontService.postSave(this.balances).subscribe(res => {
       if(res.status === 200) this.success('Data salved with success =) ');
-
       else this.error('Ops something went wrong =( '); 
-
-      this.clearFields();
     });
+    this.clearFields();
   }
 
   clearFields(){
@@ -65,4 +69,5 @@ export class StageTwoComponent implements AfterViewInit {
   clear() {
     this.alertService.clear();
   }
+
 }

@@ -3,7 +3,7 @@
       <mat-grid-tile
         [colspan]="3"
         [rowspan]="2">
-        <div>
+        <div class="text-center">
           <h1>{{ 'LEVEL_1' | translate }}</h1>
           <h3>{{ 'RESUME_1' | translate }}</h3>
         </div>        
@@ -27,7 +27,7 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile 
-          *ngIf="result"
+          *ngIf="result.length > 0"
           [colspan]="3"
           [rowspan]="5"
         >
@@ -36,6 +36,15 @@
               {{result}}                    
             </pre>
           </div>
+      </mat-grid-tile>
+      <mat-grid-tile
+        *ngIf="balances.length > 0"
+        [colspan]="3"
+        [rowspan]="1"
+      >
+        <div fxLayoutAlign="center center" class="button-submit">
+          <button mat-flat-button color="primary" (click)="save()" >{{ 'SAVE' | translate }}</button>
+        </div>
       </mat-grid-tile>
   </mat-grid-list>
   

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, APP_INITIALIZER  } from '@angular/core';
 import { DirectivesModule } from './directives/directives.module';
+import { AlertComponent } from './components/alert/alert.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './routing/app-routing.module';
@@ -27,6 +28,9 @@ import { StageOneComponent } from './components/stage-one/stage-one.component';
 import { StageTwoComponent } from './components/stage-two/stage-two.component';
 import { StageThreeComponent } from './components/stage-three/stage-three.component';
 
+import { AlertService } from './services/alert/alert.service';
+import { StageFourComponent } from './components/stage-four/stage-four.component';
+
 export function setupTranslateFactory(
   service: TranslateService): Function {
   return () => service.use('en');
@@ -44,10 +48,12 @@ export function setupTranslateFactory(
     HeaderComponent,
     SidenavListComponent,
     StageOneComponent,
-    StageThreeComponent
+    StageThreeComponent,
+    StageFourComponent,
+    AlertComponent
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -66,7 +72,8 @@ export function setupTranslateFactory(
       deps: [ TranslateService ],
       multi: true
     },
-    NucontService
+    NucontService,
+    AlertService
   ],
   bootstrap: [AppComponent]
 })

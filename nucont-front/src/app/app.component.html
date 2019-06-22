@@ -5,8 +5,11 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <app-header (sidenavToggle)="drawer.toggle()"></app-header>
-      <main class="container" fxLayout="row">
-        <router-outlet></router-outlet>
+      <main class="container">
+        <alert class="row mt-4 justify-content-center"></alert>
+        <div class="row" style="width: 100%;">
+          <router-outlet></router-outlet>
+        </div>
       </main>
     </mat-sidenav-content>
   </mat-sidenav-container>

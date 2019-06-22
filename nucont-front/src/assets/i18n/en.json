@@ -17,5 +17,7 @@
   "RESUME_1": "The template is bellow, press button convert to genarate JSON model.",
   "RESUME_2": "Now our tamplate is a little bit more complicated, but still we are the unique hope that mankind wish for! Do it my friend...",
   "RESUME_3": "Brace yourselfes the winter is comming!",
-  "SUBMIT": "JSON Stringfy"
+  "RESUME_4": "Last Boss here boyz, lets Rock it!",
+  "SUBMIT": "JSON Stringfy",
+  "SAVE": "Save JSON in Mongodb"
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
+import { Balance } from './../../models/balance.nucont';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,26 @@ export class NucontService {
     return this.http.post<any>(
       url,
       {data}
+    ).pipe(map((res: Response) => {
+      return res;
+    }, catchError(this.handleError)));
+  }
+
+  postStageFour(data:any): Observable<any> {
+    let url = `${this._url}four`;
+    return this.http.post<any>(
+      url,
+      {data}
+    ).pipe(map((res: Response) => {
+      return res;
+    }, catchError(this.handleError)));
+  }
+
+  postSave(balances: Array<Balance>): Observable<any> {
+    let url = `${this._url}save`;
+    return this.http.post<any>(
+      url,
+      {balances}
     ).pipe(map((res: Response) => {
       return res;
     }, catchError(this.handleError)));
