@@ -13,7 +13,6 @@
 </ul>
 <h4>Runnig</h4>
 <p>For runnig the project just go to frontend folder and type <code>npm i</code> and then <code>ng serve --open</code> this should open your main browser in 4200 port with the application.</p>
-<p>In case of problems running it you can find a index.html inside the dist folder, that you can use to launch a Demo application without any trouble.</p>
 <h3>Backend</h3>
 <p>Just a simple nodejs server that has great powers of data extracting!</p>
 <p>In this project all business rules are treated in backend - Simulating the real dayling projects</p>
